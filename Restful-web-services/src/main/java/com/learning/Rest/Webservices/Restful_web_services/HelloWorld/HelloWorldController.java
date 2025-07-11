@@ -1,6 +1,7 @@
 package com.learning.Rest.Webservices.Restful_web_services.HelloWorld;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,4 +29,14 @@ public class HelloWorldController {
 	public HelloWorldBean hello_WorldBean() {
 		return new HelloWorldBean("Hello World Bean");
 	}
+	
+	
+	//Hello World API with path variable
+	
+	@GetMapping("/HelloWorld/path/{name}")
+	public HelloWorldBean WorldBeanpath(@PathVariable String name) {
+		return new HelloWorldBean("Hello Good morning   "+ name);
+	}
+	
+	
 }
